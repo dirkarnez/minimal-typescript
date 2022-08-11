@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Compile Demo</title>
+</head>
+<body>
+    <h1>TypeScript Compile Demo</h1>
+    <p>This is a demo of <a href="https://github.com/niutech/typescript-compile">TypeScript Compile</a>. Have a look at the source code.</p>
+    <!-- Add your TypeScript code block using type="text/typescript" -->
+    <script type="text/typescript">
+        module Sayings {
+            export class Greeter {
+                greeting: string;
+                constructor (message: string) {
+                    this.greeting = message;
+                }
+                greet() {
+                    return "Hello, " + this.greeting;
+                }
+            }
+        }
+    </script>
+    <!-- You can add multiple TypeScript blocks: -->
+    <script type="text/typescript">
+        var greeter = new Sayings.Greeter('world');
+        var button = document.createElement('button');
+        button.innerHTML = "Say Hello"
+        button.onclick = function() {
+                alert(greeter.greet())
+        }
+        document.body.appendChild(button)
+    </script>
+    <!-- Don't forget to add these two JavaScripts at the end of the body: -->
+    <script type="text/javascript" src="http://niutech.github.io/typescript-compile/js/typescript.min.js"></script>
+    <script type="text/javascript" src="http://niutech.github.io/typescript-compile/js/typescript.compile.min.js"></script>
+</body>
+</html>
